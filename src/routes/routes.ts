@@ -1,8 +1,9 @@
 import { RouteNamesEnum } from 'localConstants';
 import { Dashboard, Disclaimer, Home, Unlock } from 'pages';
-import { RouteType } from 'types';
 
-interface RouteWithTitleType extends RouteType {
+interface RouteWithTitleType {
+  path: string;
+  component: any;
   title: string;
   authenticatedRoute?: boolean;
 }

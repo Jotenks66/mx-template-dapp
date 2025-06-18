@@ -22,7 +22,7 @@ export const getBatchTransactions = ({
   return transactions.map((id) => {
     const amount = TokenTransfer.fungibleFromAmount(
       '',
-      id + 1,
+      id / 100 + 0.01,
       DECIMALS
     ).toString();
 
@@ -35,7 +35,7 @@ export const getBatchTransactions = ({
       gasLimit: GAS_LIMIT + EXTRA_GAS_LIMIT_GUARDED_TX,
       gasPrice: GAS_PRICE,
       nonce,
-      version: VERSION
+      version: 2
     });
   });
 };

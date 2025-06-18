@@ -10,6 +10,7 @@ export const useGetProfile = () => {
   const getProfile = async () => {
     try {
       setIsLoading(true);
+      console.log('API_URL', API_URL);
       const { data } = await axios.get('/account', {
         baseURL: API_URL
       });

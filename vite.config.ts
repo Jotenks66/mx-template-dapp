@@ -11,6 +11,14 @@ export default defineConfig({
     strictPort: true,
     host: true,
     https: true,
+    proxy: {
+      '/dapp/config': {
+        target: 'https://vibeox-api.multiversx.com', // Use the appropriate API_URL for your environment
+        changeOrigin: true,
+        secure: false, // Set to true if your API uses a valid SSL certificate
+        rewrite: (path) => path // keeps the path as /dapp/config
+      }
+    },
     watch: {
       usePolling: false,
       useFsEvents: false

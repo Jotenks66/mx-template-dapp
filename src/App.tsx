@@ -21,13 +21,13 @@ import { routes } from 'routes';
 import { BatchTransactionsContextProvider } from 'wrappers';
 
 const AppContent = () => {
-  return (
+ return (
     <DappProvider
       environment={environment}
       customNetworkConfig={{
         name: 'customConfig',
         apiTimeout,
-        walletConnectV2ProjectId
+        metamaskSnapWalletAddress: 'https://vibe.gaupa.xyz/connect'
       }}
       dappConfig={{
         shouldUseWebViewProvider: true,
