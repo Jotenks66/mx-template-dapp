@@ -6,6 +6,7 @@ import { walletConnectV2ProjectId } from 'config';
 // Enable this block to showcase a custom provider implementation
 
 import { EnvironmentsEnum, ICustomProvider, InitAppType } from './lib';
+import { GaupaProvider } from './provider/gaupaProvider';
 import { InMemoryProvider } from './provider/inMemoryProvider';
 
 const providers: ICustomProvider[] = [
@@ -14,7 +15,13 @@ const providers: ICustomProvider[] = [
     type: 'inMemoryProvider',
     iconUrl: `${window.location.origin}/multiversx-white.svg`,
     constructor: async (options) => new InMemoryProvider(options)
-  }
+  },
+  {
+    name: 'Gaupa Login',
+    type: 'gaupaProvider',
+    iconUrl: GaupaProvider.iconUrl,
+    constructor: async (options) => new GaupaProvider(options)
+  },
 ];
 
 (window as any).multiversx = {};
