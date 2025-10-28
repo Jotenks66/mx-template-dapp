@@ -14,9 +14,9 @@ const providers: ICustomProvider[] = [
   }
 ];
 
-(window as any).multiversx = {};
-// Option 1: Add providers using the `window.providers` array
-(window as any).multiversx.providers = providers;
+// (window as any).multiversx = {};
+// // Option 1: Add providers using the `window.providers` array
+// (window as any).multiversx.providers = providers;
 
 export const config: InitAppType = {
   storage: { getStorageCallback: () => sessionStorage },
@@ -29,8 +29,8 @@ export const config: InitAppType = {
         walletConnectV2ProjectId
       }
     }
-  }
+  },
 
   // Option 2: Add providers using the config `customProviders` array
-  // customProviders: [providers]
+  customProviders: providers
 };

@@ -1,0 +1,9 @@
+{
+  "buildCommand": "pnpm build-testnet",
+  "outputDirectory": "build",
+  "rewrites": [
+    { "source": "/((?!.*\\.).*)", "destination": "/index.html" }
+  ]
+}
+
+
