@@ -4,6 +4,7 @@ import { ReactComponent as PasskeyIcon } from 'assets/img/passkey-icon.svg';
 import { ReactComponent as WebWalletIcon } from 'assets/img/web-wallet-icon.svg';
 import { ReactComponent as XPortalIcon } from 'assets/img/xportal-icon.svg';
 import { BrowserEnum, getDetectedBrowser, getNetworkConfig } from 'lib';
+import { GaupaProvider } from 'provider/gaupaProvider';
 import {
   CHROME_METAMASK_EXTENSION_LINK,
   FIREFOX_METAMASK_ADDON_LINK,
@@ -30,7 +31,7 @@ export const HomeConnect = () => {
 
   const connectCards = [
     {
-      icon: MetamaskIcon,
+      icon: <MetamaskIcon />,
       title: 'Metamask Snap',
       description:
         'Explore the entire MultiversX ecosystem with Metamask! Securely manage, swap and transfer your assets.',
@@ -40,7 +41,7 @@ export const HomeConnect = () => {
         : CHROME_METAMASK_EXTENSION_LINK
     },
     {
-      icon: PasskeyIcon,
+      icon: <PasskeyIcon />,
       title: 'Passkey',
       description:
         'Passkeys offer a more secure and user-friendly way to authenticate and sign transactions.',
@@ -48,7 +49,7 @@ export const HomeConnect = () => {
       linkDownloadAddress: walletAddress
     },
     {
-      icon: XPortalIcon,
+      icon: <XPortalIcon />,
       title: 'xPortal Wallet',
       description:
         'The easiest way to invest, spend globally with a crypto card and earn yield across DeFi and stablecoins.',
@@ -56,7 +57,7 @@ export const HomeConnect = () => {
       linkDownloadAddress: GET_XPORTAL
     },
     {
-      icon: LedgerIcon,
+      icon: <LedgerIcon />,
       title: 'Ledger',
       description:
         'You can safely store your EGLD by installing the MultiversX EGLD app on your Ledger Nano S or Ledger Nano X device',
@@ -64,12 +65,20 @@ export const HomeConnect = () => {
       linkDownloadAddress: GET_LEDGER
     },
     {
-      icon: WebWalletIcon,
+      icon: <WebWalletIcon />,
       title: 'MultiversX Web Wallet',
       description:
         'Store, swap, and transfer tokens or NFTs. Connect to Web3 apps on MultiversX blockchain.',
       linkTitle: 'Get MultiversX Wallet',
       linkDownloadAddress: walletAddress
+    },
+    {
+      icon: <img src={GaupaProvider.iconUrl} alt='Gaupa' className='w-[54px] h-[54px] object-contain' />,
+      title: 'Gaupa Login',
+      description:
+        'Access the world of web3 in a single click.',
+      linkTitle: 'Implement Gaupa Login',
+      linkDownloadAddress: "https://gaupa.xyz"
     }
   ];
 

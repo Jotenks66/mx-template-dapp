@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pnpm build-testnet",
+  "buildCommand": "pnpm build-devnet",
   "outputDirectory": "build",
   "rewrites": [
     { "source": "/((?!.*\\.).*)", "destination": "/index.html" }

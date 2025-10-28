@@ -1,6 +1,6 @@
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { FunctionComponent, SVGProps } from 'react';
+import { ReactNode } from 'react';
 
 // prettier-ignore
 const styles = {
@@ -13,7 +13,7 @@ const styles = {
 } satisfies Record<string, string>;
 
 interface ConnectCardPropsType {
-  icon: FunctionComponent<SVGProps<SVGSVGElement>>;
+  icon: ReactNode;
   title: string;
   description: string;
   linkTitle: string;
@@ -27,11 +27,9 @@ export const ConnectCard = ({
   linkTitle,
   linkDownloadAddress
 }: ConnectCardPropsType) => {
-  const IconComponent = icon;
-
   return (
     <div className={styles.connectCardContainer}>
-      <IconComponent />
+      {icon}
 
       <div className={styles.connectCardText}>
         <h2 className={styles.connectCardTitle}>{title}</h2>
